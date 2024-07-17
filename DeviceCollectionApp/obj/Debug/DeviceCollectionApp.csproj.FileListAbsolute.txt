@@ -1,0 +1,17 @@
+C:\Users\Arvin\source\repos\DeviceCollectionApp\DeviceCollectionApp\obj\Debug\DeviceCollectionApp.csproj.AssemblyReference.cache
+C:\Users\Arvin\source\repos\DeviceCollectionApp\DeviceCollectionApp\obj\Debug\DeviceCollectionApp.Form1.resources
+C:\Users\Arvin\source\repos\DeviceCollectionApp\DeviceCollectionApp\obj\Debug\DeviceCollectionApp.Properties.Resources.resources
+C:\Users\Arvin\source\repos\DeviceCollectionApp\DeviceCollectionApp\obj\Debug\DeviceCollectionApp.csproj.GenerateResource.cache
+C:\Users\Arvin\source\repos\DeviceCollectionApp\DeviceCollectionApp\obj\Debug\DeviceCollectionApp.csproj.CoreCompileInputs.cache
+C:\Users\Arvin\source\repos\DeviceCollectionApp\DeviceCollectionApp\bin\Debug\DeviceCollectionApp.exe.config
+C:\Users\Arvin\source\repos\DeviceCollectionApp\DeviceCollectionApp\bin\Debug\DeviceCollectionApp.exe
+C:\Users\Arvin\source\repos\DeviceCollectionApp\DeviceCollectionApp\bin\Debug\DeviceCollectionApp.pdb
+C:\Users\Arvin\source\repos\DeviceCollectionApp\DeviceCollectionApp\bin\Debug\CommonInterfaces.dll
+C:\Users\Arvin\source\repos\DeviceCollectionApp\DeviceCollectionApp\bin\Debug\CommonInterfaces.pdb
+C:\Users\Arvin\source\repos\DeviceCollectionApp\DeviceCollectionApp\obj\Debug\DeviceCollectionApp.csproj.CopyComplete
+C:\Users\Arvin\source\repos\DeviceCollectionApp\DeviceCollectionApp\obj\Debug\DeviceCollectionApp.exe
+C:\Users\Arvin\source\repos\DeviceCollectionApp\DeviceCollectionApp\obj\Debug\DeviceCollectionApp.pdb
+C:\Users\Arvin\source\repos\DeviceCollectionApp\DeviceCollectionApp\bin\Debug\Device1Plugin.dll
+C:\Users\Arvin\source\repos\DeviceCollectionApp\DeviceCollectionApp\bin\Debug\Device2Plugin.dll
+C:\Users\Arvin\source\repos\DeviceCollectionApp\DeviceCollectionApp\bin\Debug\Device1Plugin.pdb
+C:\Users\Arvin\source\repos\DeviceCollectionApp\DeviceCollectionApp\bin\Debug\Device2Plugin.pdb

@@ -1,0 +1,9 @@
+C:\Users\Arvin\source\repos\DeviceCollectionApp\Device2Plugin\bin\Debug\Device2Plugin.dll
+C:\Users\Arvin\source\repos\DeviceCollectionApp\Device2Plugin\bin\Debug\Device2Plugin.pdb
+C:\Users\Arvin\source\repos\DeviceCollectionApp\Device2Plugin\bin\Debug\CommonInterfaces.dll
+C:\Users\Arvin\source\repos\DeviceCollectionApp\Device2Plugin\bin\Debug\CommonInterfaces.pdb
+C:\Users\Arvin\source\repos\DeviceCollectionApp\Device2Plugin\obj\Debug\Device2Plugin.csproj.AssemblyReference.cache
+C:\Users\Arvin\source\repos\DeviceCollectionApp\Device2Plugin\obj\Debug\Device2Plugin.csproj.CoreCompileInputs.cache
+C:\Users\Arvin\source\repos\DeviceCollectionApp\Device2Plugin\obj\Debug\Device2Plugin.csproj.CopyComplete
+C:\Users\Arvin\source\repos\DeviceCollectionApp\Device2Plugin\obj\Debug\Device2Plugin.dll
+C:\Users\Arvin\source\repos\DeviceCollectionApp\Device2Plugin\obj\Debug\Device2Plugin.pdb

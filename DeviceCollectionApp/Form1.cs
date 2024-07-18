@@ -57,6 +57,10 @@ namespace DeviceCollectionApp
             {
                 LoadAndStartPlugin(selectedDevice);
             }
+            else
+            {
+                richTextBox1.AppendText("請選擇要啟動設備! \n");
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -156,7 +160,7 @@ namespace DeviceCollectionApp
             }
             catch (Exception ex)
             {
-                richTextBox1.AppendText($"Error updating plugin: {ex.Message}");
+                richTextBox1.AppendText($"Error updating plugin: {ex.Message} \n");
             }
 
         }
@@ -164,6 +168,11 @@ namespace DeviceCollectionApp
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Clear();
         }
     }
 }

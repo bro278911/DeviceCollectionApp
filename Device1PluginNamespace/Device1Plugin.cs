@@ -35,7 +35,7 @@ namespace Device1PluginNamespace
         {
             while (isRunning)
             {
-                string message = "Device1 collecting data...測試完成!";
+                string message = "Device1 collecting data...測試完成1!";
                 mainForm.AppendTextToRichTextBox(message);
                 Task.Delay(1000).Wait();
             }

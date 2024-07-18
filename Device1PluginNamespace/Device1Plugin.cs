@@ -7,7 +7,7 @@ using CommonInterfaces;
 
 namespace Device1PluginNamespace
 {
-    public class Device1Plugin : IPlugin
+    public class Device1Plugin : MarshalByRefObject,IPlugin
     {
         private bool isRunning;
         private IMainForm mainForm;
@@ -35,7 +35,7 @@ namespace Device1PluginNamespace
         {
             while (isRunning)
             {
-                string message = "Device1 collecting data...11111";
+                string message = "Device1 collecting data...測試完成!";
                 mainForm.AppendTextToRichTextBox(message);
                 Task.Delay(1000).Wait();
             }

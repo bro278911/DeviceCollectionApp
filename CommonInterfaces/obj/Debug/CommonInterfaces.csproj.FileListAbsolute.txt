@@ -4,3 +4,9 @@ C:\Users\Arvin\source\repos\DeviceCollectionApp\CommonInterfaces\obj\Debug\Commo
 C:\Users\Arvin\source\repos\DeviceCollectionApp\CommonInterfaces\obj\Debug\CommonInterfaces.csproj.CoreCompileInputs.cache
 C:\Users\Arvin\source\repos\DeviceCollectionApp\CommonInterfaces\obj\Debug\CommonInterfaces.dll
 C:\Users\Arvin\source\repos\DeviceCollectionApp\CommonInterfaces\obj\Debug\CommonInterfaces.pdb
+D:\Users\User\Desktop\DeviceCollectionApp\CommonInterfaces\bin\Debug\CommonInterfaces.dll
+D:\Users\User\Desktop\DeviceCollectionApp\CommonInterfaces\bin\Debug\CommonInterfaces.pdb
+D:\Users\User\Desktop\DeviceCollectionApp\CommonInterfaces\obj\Debug\CommonInterfaces.csproj.AssemblyReference.cache
+D:\Users\User\Desktop\DeviceCollectionApp\CommonInterfaces\obj\Debug\CommonInterfaces.csproj.CoreCompileInputs.cache
+D:\Users\User\Desktop\DeviceCollectionApp\CommonInterfaces\obj\Debug\CommonInterfaces.dll
+D:\Users\User\Desktop\DeviceCollectionApp\CommonInterfaces\obj\Debug\CommonInterfaces.pdb

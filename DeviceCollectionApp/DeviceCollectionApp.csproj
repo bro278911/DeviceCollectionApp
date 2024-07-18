@@ -84,14 +84,6 @@
       <Project>{4095c8d7-b24c-41aa-a07f-8a17bdede81a}</Project>
       <Name>CommonInterfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Device1PluginNamespace\Device1PluginNamespace.csproj">
-      <Project>{3f742dff-8987-4097-ac7e-05b7487d8792}</Project>
-      <Name>Device1PluginNamespace</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Device2PluginNamespace\Device2PluginNamespace.csproj">
-      <Project>{d5e6d351-ac50-4fa0-99a9-2aee8173266e}</Project>
-      <Name>Device2PluginNamespace</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

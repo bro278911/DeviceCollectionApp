@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Device2PluginNamespace
 {
-    public class Device2Plugin : IPlugin
+    public class Device2Plugin : MarshalByRefObject, IPlugin
     {
         private bool isRunning;
         private IMainForm mainForm;
@@ -35,7 +35,7 @@ namespace Device2PluginNamespace
         {
             while (isRunning)
             {
-                string message = "Device2 collecting data...33333";
+                string message = "Device2 collecting data...測試完成!";
                 mainForm.AppendTextToRichTextBox(message);
                 Task.Delay(1000).Wait();
             }

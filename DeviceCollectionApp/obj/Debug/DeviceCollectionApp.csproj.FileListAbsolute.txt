@@ -15,3 +15,17 @@ C:\Users\Arvin\source\repos\DeviceCollectionApp\DeviceCollectionApp\bin\Debug\De
 C:\Users\Arvin\source\repos\DeviceCollectionApp\DeviceCollectionApp\bin\Debug\Device2Plugin.dll
 C:\Users\Arvin\source\repos\DeviceCollectionApp\DeviceCollectionApp\bin\Debug\Device1Plugin.pdb
 C:\Users\Arvin\source\repos\DeviceCollectionApp\DeviceCollectionApp\bin\Debug\Device2Plugin.pdb
+D:\Users\User\Desktop\DeviceCollectionApp\DeviceCollectionApp\bin\Debug\DeviceCollectionApp.exe.config
+D:\Users\User\Desktop\DeviceCollectionApp\DeviceCollectionApp\bin\Debug\DeviceCollectionApp.exe
+D:\Users\User\Desktop\DeviceCollectionApp\DeviceCollectionApp\bin\Debug\DeviceCollectionApp.pdb
+D:\Users\User\Desktop\DeviceCollectionApp\DeviceCollectionApp\bin\Debug\CommonInterfaces.dll
+D:\Users\User\Desktop\DeviceCollectionApp\DeviceCollectionApp\bin\Debug\CommonInterfaces.pdb
+D:\Users\User\Desktop\DeviceCollectionApp\DeviceCollectionApp\obj\Debug\DeviceCollectionApp.csproj.AssemblyReference.cache
+D:\Users\User\Desktop\DeviceCollectionApp\DeviceCollectionApp\obj\Debug\DeviceCollectionApp.csproj.SuggestedBindingRedirects.cache
+D:\Users\User\Desktop\DeviceCollectionApp\DeviceCollectionApp\obj\Debug\DeviceCollectionApp.Form1.resources
+D:\Users\User\Desktop\DeviceCollectionApp\DeviceCollectionApp\obj\Debug\DeviceCollectionApp.Properties.Resources.resources
+D:\Users\User\Desktop\DeviceCollectionApp\DeviceCollectionApp\obj\Debug\DeviceCollectionApp.csproj.GenerateResource.cache
+D:\Users\User\Desktop\DeviceCollectionApp\DeviceCollectionApp\obj\Debug\DeviceCollectionApp.csproj.CoreCompileInputs.cache
+D:\Users\User\Desktop\DeviceCollectionApp\DeviceCollectionApp\obj\Debug\DeviceCollectionApp.csproj.CopyComplete
+D:\Users\User\Desktop\DeviceCollectionApp\DeviceCollectionApp\obj\Debug\DeviceCollectionApp.exe
+D:\Users\User\Desktop\DeviceCollectionApp\DeviceCollectionApp\obj\Debug\DeviceCollectionApp.pdb

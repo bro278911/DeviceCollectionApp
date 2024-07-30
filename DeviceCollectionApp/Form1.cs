@@ -20,6 +20,7 @@ namespace DeviceCollectionApp
         private AppDomain pluginAppDomain1;
         private AppDomain pluginAppDomain2;
         private string pluginDirectory;
+        private string currentDevice = null;
         public Form1()
         {
             InitializeComponent();
@@ -53,11 +54,14 @@ namespace DeviceCollectionApp
         private void button1_Click(object sender, EventArgs e)
         {
             string selectedDevice = comboBoxDevices.SelectedItem?.ToString();
-            if (selectedDevice != null)
+            if (selectedDevice != null && selectedDevice != currentDevice)
             {
                 LoadAndStartPlugin(selectedDevice);
-            }
-            else
+                currentDevice = selectedDevice;
+            }else if(selectedDevice != null && selectedDevice == currentDevice)
+            {
+                richTextBox1.AppendText("該設備已啟動! \n");
+            }else
             {
                 richTextBox1.AppendText("請選擇要啟動設備! \n");
             }

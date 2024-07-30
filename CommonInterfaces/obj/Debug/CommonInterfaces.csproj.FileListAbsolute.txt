@@ -10,3 +10,15 @@ D:\Users\User\Desktop\DeviceCollectionApp\CommonInterfaces\obj\Debug\CommonInter
 D:\Users\User\Desktop\DeviceCollectionApp\CommonInterfaces\obj\Debug\CommonInterfaces.csproj.CoreCompileInputs.cache
 D:\Users\User\Desktop\DeviceCollectionApp\CommonInterfaces\obj\Debug\CommonInterfaces.dll
 D:\Users\User\Desktop\DeviceCollectionApp\CommonInterfaces\obj\Debug\CommonInterfaces.pdb
+C:\Users\Arvin\Desktop\DeviceCollectionApp\CommonInterfaces\bin\Debug\CommonInterfaces.dll
+C:\Users\Arvin\Desktop\DeviceCollectionApp\CommonInterfaces\bin\Debug\CommonInterfaces.pdb
+C:\Users\Arvin\Desktop\DeviceCollectionApp\CommonInterfaces\obj\Debug\CommonInterfaces.csproj.AssemblyReference.cache
+C:\Users\Arvin\Desktop\DeviceCollectionApp\CommonInterfaces\obj\Debug\CommonInterfaces.csproj.CoreCompileInputs.cache
+C:\Users\Arvin\Desktop\DeviceCollectionApp\CommonInterfaces\obj\Debug\CommonInterfaces.dll
+C:\Users\Arvin\Desktop\DeviceCollectionApp\CommonInterfaces\obj\Debug\CommonInterfaces.pdb
+E:\程式\DeviceCollectionApp\CommonInterfaces\bin\Debug\CommonInterfaces.dll
+E:\程式\DeviceCollectionApp\CommonInterfaces\bin\Debug\CommonInterfaces.pdb
+E:\程式\DeviceCollectionApp\CommonInterfaces\obj\Debug\CommonInterfaces.csproj.AssemblyReference.cache
+E:\程式\DeviceCollectionApp\CommonInterfaces\obj\Debug\CommonInterfaces.csproj.CoreCompileInputs.cache
+E:\程式\DeviceCollectionApp\CommonInterfaces\obj\Debug\CommonInterfaces.dll
+E:\程式\DeviceCollectionApp\CommonInterfaces\obj\Debug\CommonInterfaces.pdb

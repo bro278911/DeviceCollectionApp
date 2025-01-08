@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,106 +15,245 @@ namespace DeviceCollectionApp
 {
     public partial class Form1 : Form, IMainForm
     {
-        private IPlugin Device1;
-        private IPlugin Device2;
-        private AppDomain pluginAppDomain1;
-        private AppDomain pluginAppDomain2;
+        private enum DeviceStatus
+        {
+            NotLoaded,
+            Loading,
+            Running,
+            Stopping,
+            Stopped,
+            Error
+        }
+
+        private class DeviceInfo
+        {
+            public IPlugin Plugin { get; set; }
+            public AppDomain AppDomain { get; set; }
+            public DeviceStatus Status { get; set; }
+            public string Name { get; set; }
+        }
+
+        private readonly Dictionary<string, DeviceInfo> devices;
         private string pluginDirectory;
-        private string currentDevice = null;
+        private bool isDisposed;
+
         public Form1()
         {
             InitializeComponent();
+            devices = new Dictionary<string, DeviceInfo>
+            {
+                { "Device1Plugin", new DeviceInfo { Status = DeviceStatus.NotLoaded, Name = "Device1Plugin" } },
+                { "Device2Plugin", new DeviceInfo { Status = DeviceStatus.NotLoaded, Name = "Device2Plugin" } }
+            };
             InitializeDevices();
         }
 
         private void InitializeDevices()
         {
-            comboBoxDevices.Items.Add("Device1Plugin");
-            comboBoxDevices.Items.Add("Device2Plugin");
+            foreach (var device in devices.Keys)
+            {
+                comboBoxDevices.Items.Add(device);
+            }
+            
             pluginDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory);
             if (!Directory.Exists(pluginDirectory))
             {
                 Directory.CreateDirectory(pluginDirectory);
             }
         }
-        public void AppendTextToRichTextBox(string text)
-        {
-            if (richTextBox1.InvokeRequired)
-            {
-                richTextBox1.Invoke((MethodInvoker)delegate
-                {
-                    richTextBox1.AppendText(text + Environment.NewLine);
-                });
-            }
-            else
-            {
-                richTextBox1.AppendText(text + Environment.NewLine);
-            }
-        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             string selectedDevice = comboBoxDevices.SelectedItem?.ToString();
-            if (selectedDevice != null && selectedDevice != currentDevice)
+            if (string.IsNullOrEmpty(selectedDevice))
+            {
+                MessageBox.Show("請選擇要啟動的設備!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            var device = devices[selectedDevice];
+            if (device.Status == DeviceStatus.Running)
+            {
+                MessageBox.Show("設備已經在運行中!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            try
             {
                 LoadAndStartPlugin(selectedDevice);
-                currentDevice = selectedDevice;
-            }else if(selectedDevice != null && selectedDevice == currentDevice)
+            }
+            catch (Exception ex)
             {
-                richTextBox1.AppendText("該設備已啟動! \n");
-            }else
-            {
-                richTextBox1.AppendText("請選擇要啟動設備! \n");
+                devices[selectedDevice].Status = DeviceStatus.Error;
+                LogError($"啟動設備 {selectedDevice} 時發生錯誤: {ex.Message}");
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             string selectedDevice = comboBoxDevices.SelectedItem?.ToString();
-
-            if (selectedDevice == "Device1Plugin" && Device1 != null)
+            if (string.IsNullOrEmpty(selectedDevice))
             {
-                Device1.Stop();
-                UnloadPluginAppDomain(ref pluginAppDomain1);
-                Device1 = null;
+                MessageBox.Show("請選擇要停止的設備!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
-            else if (selectedDevice == "Device2Plugin" && Device2 != null)
+
+            var device = devices[selectedDevice];
+            if (device.Status != DeviceStatus.Running)
             {
-                Device2.Stop();
-                UnloadPluginAppDomain(ref pluginAppDomain2);
-                Device2 = null;
+                MessageBox.Show("設備未在運行中!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            try
+            {
+                device.Status = DeviceStatus.Stopping;
+                StopDevice(selectedDevice);
+                device.Status = DeviceStatus.Stopped;
+                LogMessage($"設備 {selectedDevice} 已停止");
+            }
+            catch (Exception ex)
+            {
+                device.Status = DeviceStatus.Error;
+                LogError($"停止設備 {selectedDevice} 時發生錯誤: {ex.Message}");
             }
         }
+
         private void LoadAndStartPlugin(string pluginName)
         {
-            string pluginPath = Path.Combine(pluginDirectory, $"{pluginName}.dll");
-            if (File.Exists(pluginPath))
+            var device = devices[pluginName];
+            device.Status = DeviceStatus.Loading;
+            LogMessage($"正在加載設備 {pluginName}...");
+
+            try
             {
-                if (pluginName == "Device2Plugin")
+                string pluginPath = Path.Combine(pluginDirectory, $"{pluginName}.dll");
+                if (!File.Exists(pluginPath))
                 {
-                    pluginAppDomain2 = AppDomain.CreateDomain("PluginAppDomain2");
-                    var loader = (PluginLoader)pluginAppDomain2.CreateInstanceAndUnwrap(
-                        typeof(PluginLoader).Assembly.FullName,
-                        typeof(PluginLoader).FullName);
-
-                    Device2 = loader.LoadPlugin(pluginPath, $"{pluginName}Namespace.{pluginName}", this);
-                    Device2.Start();
+                    throw new FileNotFoundException($"找不到插件文件: {pluginPath}");
                 }
-                else if(pluginName == "Device1Plugin")
+
+                var appDomain = AppDomain.CreateDomain($"PluginDomain_{pluginName}_{Guid.NewGuid()}");
+                var loader = (PluginLoader)appDomain.CreateInstanceAndUnwrap(
+                    typeof(PluginLoader).Assembly.FullName,
+                    typeof(PluginLoader).FullName);
+
+                var plugin = loader.LoadPlugin(pluginPath, $"{pluginName}Namespace.{pluginName}", this);
+                
+                device.AppDomain = appDomain;
+                device.Plugin = plugin;
+                device.Status = DeviceStatus.Running;
+                
+                plugin.Start();
+                LogMessage($"設備 {pluginName} 已成功啟動");
+            }
+            catch
+            {
+                device.Status = DeviceStatus.Error;
+                throw;
+            }
+        }
+
+        private void StopDevice(string pluginName)
+        {
+            var device = devices[pluginName];
+            try
+            {
+                device.Plugin?.Stop();
+                UnloadPluginAppDomain(device.AppDomain);
+                device.Plugin = null;
+                device.AppDomain = null;
+            }
+            catch (Exception)
+            {
+                device.Status = DeviceStatus.Error;
+                throw;
+            }
+        }
+
+        private void UnloadPluginAppDomain(AppDomain appDomain)
+        {
+            if (appDomain != null)
+            {
+                try
                 {
-                    pluginAppDomain1 = AppDomain.CreateDomain("PluginAppDomain1");
-                    var loader = (PluginLoader)pluginAppDomain1.CreateInstanceAndUnwrap(
-                        typeof(PluginLoader).Assembly.FullName,
-                        typeof(PluginLoader).FullName);
-
-                    Device1 = loader.LoadPlugin(pluginPath, $"{pluginName}Namespace.{pluginName}", this);
-                    Device1.Start();
+                    AppDomain.Unload(appDomain);
                 }
+                catch (Exception ex)
+                {
+                    LogError($"卸載 AppDomain 時發生錯誤: {ex.Message}");
+                    throw;
+                }
+            }
+        }
+
+        private void LogMessage(string message)
+        {
+            AppendTextToRichTextBox($"[INFO] {message}");
+        }
+
+        private void LogError(string message)
+        {
+            AppendTextToRichTextBox($"[ERROR] {message}");
+            MessageBox.Show(message, "錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        public void AppendTextToRichTextBox(string text)
+        {
+            if (richTextBox1.InvokeRequired)
+            {
+                richTextBox1.Invoke((MethodInvoker)delegate
+                {
+                    richTextBox1.AppendText($"{text}{Environment.NewLine}");
+                    richTextBox1.ScrollToCaret();
+                });
             }
             else
             {
-                MessageBox.Show($"Plugin DLL not found: {pluginPath}");
+                richTextBox1.AppendText($"{text}{Environment.NewLine}");
+                richTextBox1.ScrollToCaret();
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //雙開更新後還有點bug
+            string selectedDevice = comboBoxDevices.SelectedItem?.ToString();
+            if (string.IsNullOrEmpty(selectedDevice))
+            {
+                MessageBox.Show("請選擇要更新的設備!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            string relativeNewPluginPath = $@"..\..\..\{selectedDevice}Namespace\bin\Debug\{selectedDevice}.dll";
+            string pluginPath = Path.Combine(pluginDirectory, $"{selectedDevice}.dll");
+
+            try
+            {
+                var device = devices[selectedDevice];
+                if (device.Status == DeviceStatus.Running)
+                {
+                    StopDevice(selectedDevice);
+                }
+
+                File.Copy(relativeNewPluginPath, pluginPath, true);
+                LogMessage($"設備 {selectedDevice} 更新成功");
+            }
+            catch (Exception ex)
+            {
+                LogError($"更新設備時發生錯誤: {ex.Message}");
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Clear();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+        }
+
         public class PluginLoader : MarshalByRefObject
         {
             public IPlugin LoadPlugin(string assemblyPath, string typeName, IMainForm mainForm)
@@ -123,60 +262,6 @@ namespace DeviceCollectionApp
                 var type = assembly.GetType(typeName);
                 return (IPlugin)Activator.CreateInstance(type, new object[] { mainForm });
             }
-        }
-        private void UnloadPluginAppDomain(ref AppDomain appDomain)
-        {
-            if (appDomain != null)
-            {
-                AppDomain.Unload(appDomain);
-                appDomain = null;
-            }
-        }
-        private void button3_Click(object sender, EventArgs e)
-        {
-            string selectedDevice = comboBoxDevices.SelectedItem?.ToString();
-            string relativeNewPluginPath = $@"..\..\..\{selectedDevice}Namespace\bin\Debug\{selectedDevice}.dll";
-            string pluginPath = Path.Combine(pluginDirectory, $"{selectedDevice}.dll");
-            // Stop Device B
-            if (selectedDevice == "Device1Plugin" && Device1 != null)
-            {
-                Device1.Stop();
-                UnloadPluginAppDomain(ref pluginAppDomain1);
-
-                Device1 = null;
-            }
-            else if (selectedDevice == "Device2Plugin" && Device2 != null)
-            {
-                Device2.Stop();
-                UnloadPluginAppDomain(ref pluginAppDomain2);
-                Device2 = null;
-            }
-            // Get the base directory of the application
-            //string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
-            //string absoluteNewPluginPath = Path.GetFullPath(Path.Combine(baseDirectory, relativeNewPluginPath));
-            // Copy new DLL to plugin directory
-            try
-            {
-                // Copy new DLL to plugin directory
-                File.Copy(relativeNewPluginPath, pluginPath, true);
-                // Load and start updated Device
-                //LoadAndStartPlugin($"{selectedDevice}");
-            }
-            catch (Exception ex)
-            {
-                richTextBox1.AppendText($"Error updating plugin: {ex.Message} \n");
-            }
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            richTextBox1.Clear();
         }
     }
 }

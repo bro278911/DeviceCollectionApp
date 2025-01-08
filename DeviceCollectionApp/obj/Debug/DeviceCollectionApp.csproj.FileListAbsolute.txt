@@ -55,3 +55,16 @@ E:\程式\DeviceCollectionApp\DeviceCollectionApp\obj\Debug\DeviceCollectionApp.
 E:\程式\DeviceCollectionApp\DeviceCollectionApp\obj\Debug\DeviceCollectionApp.csproj.CopyComplete
 E:\程式\DeviceCollectionApp\DeviceCollectionApp\obj\Debug\DeviceCollectionApp.exe
 E:\程式\DeviceCollectionApp\DeviceCollectionApp\obj\Debug\DeviceCollectionApp.pdb
+C:\Users\bro27\OneDrive\桌面\dev\DeviceCollectionApp\DeviceCollectionApp\bin\Debug\DeviceCollectionApp.exe.config
+C:\Users\bro27\OneDrive\桌面\dev\DeviceCollectionApp\DeviceCollectionApp\bin\Debug\DeviceCollectionApp.exe
+C:\Users\bro27\OneDrive\桌面\dev\DeviceCollectionApp\DeviceCollectionApp\bin\Debug\DeviceCollectionApp.pdb
+C:\Users\bro27\OneDrive\桌面\dev\DeviceCollectionApp\DeviceCollectionApp\bin\Debug\CommonInterfaces.dll
+C:\Users\bro27\OneDrive\桌面\dev\DeviceCollectionApp\DeviceCollectionApp\bin\Debug\CommonInterfaces.pdb
+C:\Users\bro27\OneDrive\桌面\dev\DeviceCollectionApp\DeviceCollectionApp\obj\Debug\DeviceCollectionApp.csproj.AssemblyReference.cache
+C:\Users\bro27\OneDrive\桌面\dev\DeviceCollectionApp\DeviceCollectionApp\obj\Debug\DeviceCollectionApp.Form1.resources
+C:\Users\bro27\OneDrive\桌面\dev\DeviceCollectionApp\DeviceCollectionApp\obj\Debug\DeviceCollectionApp.Properties.Resources.resources
+C:\Users\bro27\OneDrive\桌面\dev\DeviceCollectionApp\DeviceCollectionApp\obj\Debug\DeviceCollectionApp.csproj.GenerateResource.cache
+C:\Users\bro27\OneDrive\桌面\dev\DeviceCollectionApp\DeviceCollectionApp\obj\Debug\DeviceCollectionApp.csproj.CoreCompileInputs.cache
+C:\Users\bro27\OneDrive\桌面\dev\DeviceCollectionApp\DeviceCollectionApp\obj\Debug\DeviceCo.6D311D7F.Up2Date
+C:\Users\bro27\OneDrive\桌面\dev\DeviceCollectionApp\DeviceCollectionApp\obj\Debug\DeviceCollectionApp.exe
+C:\Users\bro27\OneDrive\桌面\dev\DeviceCollectionApp\DeviceCollectionApp\obj\Debug\DeviceCollectionApp.pdb

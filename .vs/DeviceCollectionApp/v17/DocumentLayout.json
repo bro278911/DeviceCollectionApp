@@ -1,0 +1,86 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\bro27\\OneDrive\\\u684C\u9762\\dev\\DeviceCollectionApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5AA55DBC-B381-461D-8E29-D7194FB64360}|DeviceCollectionApp\\DeviceCollectionApp.csproj|C:\\Users\\bro27\\OneDrive\\\u684C\u9762\\dev\\DeviceCollectionApp\\devicecollectionapp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5AA55DBC-B381-461D-8E29-D7194FB64360}|DeviceCollectionApp\\DeviceCollectionApp.csproj|solutionrelative:devicecollectionapp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F742DFF-8987-4097-AC7E-05B7487D8792}|Device1PluginNamespace\\Device1PluginNamespace.csproj|C:\\Users\\bro27\\OneDrive\\\u684C\u9762\\dev\\DeviceCollectionApp\\device1pluginnamespace\\device1plugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F742DFF-8987-4097-AC7E-05B7487D8792}|Device1PluginNamespace\\Device1PluginNamespace.csproj|solutionrelative:device1pluginnamespace\\device1plugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D5E6D351-AC50-4FA0-99A9-2AEE8173266E}|Device2PluginNamespace\\Device2PluginNamespace.csproj|c:\\users\\bro27\\onedrive\\\u684C\u9762\\dev\\devicecollectionapp\\device2pluginnamespace\\device2plugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D5E6D351-AC50-4FA0-99A9-2AEE8173266E}|Device2PluginNamespace\\Device2PluginNamespace.csproj|solutionrelative:device2pluginnamespace\\device2plugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{6324226f-61b6-4f28-92ee-18d4b5fe1e48}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Device2Plugin.cs",
+              "DocumentMoniker": "C:\\Users\\bro27\\OneDrive\\\u684C\u9762\\dev\\DeviceCollectionApp\\Device2PluginNamespace\\Device2Plugin.cs",
+              "RelativeDocumentMoniker": "Device2PluginNamespace\\Device2Plugin.cs",
+              "ToolTip": "C:\\Users\\bro27\\OneDrive\\\u684C\u9762\\dev\\DeviceCollectionApp\\Device2PluginNamespace\\Device2Plugin.cs",
+              "RelativeToolTip": "Device2PluginNamespace\\Device2Plugin.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAADwvyUAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-05T14:23:58.262Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Device1Plugin.cs",
+              "DocumentMoniker": "C:\\Users\\bro27\\OneDrive\\\u684C\u9762\\dev\\DeviceCollectionApp\\Device1PluginNamespace\\Device1Plugin.cs",
+              "RelativeDocumentMoniker": "Device1PluginNamespace\\Device1Plugin.cs",
+              "ToolTip": "C:\\Users\\bro27\\OneDrive\\\u684C\u9762\\dev\\DeviceCollectionApp\\Device1PluginNamespace\\Device1Plugin.cs",
+              "RelativeToolTip": "Device1PluginNamespace\\Device1Plugin.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAQwCcAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-05T14:23:58.287Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs [\u8A2D\u8A08]",
+              "DocumentMoniker": "C:\\Users\\bro27\\OneDrive\\\u684C\u9762\\dev\\DeviceCollectionApp\\DeviceCollectionApp\\Form1.cs",
+              "RelativeDocumentMoniker": "DeviceCollectionApp\\Form1.cs",
+              "ToolTip": "C:\\Users\\bro27\\OneDrive\\\u684C\u9762\\dev\\DeviceCollectionApp\\DeviceCollectionApp\\Form1.cs [\u8A2D\u8A08]",
+              "RelativeToolTip": "DeviceCollectionApp\\Form1.cs [\u8A2D\u8A08]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-05T14:23:58.429Z",
+              "EditorCaption": " [\u8A2D\u8A08]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
